@@ -11,13 +11,21 @@ export default [{
     exports: 'named',
     strict: false
   },{
+    file: 'lib/index.umd.js',
+    format: 'umd',
+    name: 'EnToken',
+    exports: 'named',
+    strict: false
+  },{
     file: 'lib/index.es.js',
     format: 'es',
     strict: false
   }],
   plugins: [
     commonjs(),
-    resolve(),
+    resolve({
+      preferBuiltins: true
+    }),
     babel({
       runtimeHelpers: true   
     })

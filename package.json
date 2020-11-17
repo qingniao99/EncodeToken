@@ -4,6 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
+  "browser": "lib/index.umd.js",
   "scripts": {
     "build": "shx rm -rf lib/ && shx mkdir lib/ && rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
