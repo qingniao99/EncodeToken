@@ -1,5 +1,6 @@
 const Chance = require('chance');
 const AES = require("crypto-js/aes");
+const utf8 = require("crypto-js/enc-utf8");
 
 export const chance = new Chance();
 
@@ -18,6 +19,6 @@ export function enCodeToken(token) {
 export function getToken(enToken) {
   const key = enToken.substr(-9, 6);
   const tempToken = enToken.substr(0, enToken.length - 9);
-  const realToken = AES.decrypt(tempToken, key).toString(CryptoJS.enc.Utf8);
+  const realToken = AES.decrypt(tempToken, key).toString(utf8);
   return realToken;
 };
